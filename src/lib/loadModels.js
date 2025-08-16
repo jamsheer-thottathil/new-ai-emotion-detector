@@ -1,5 +1,6 @@
 import * as faceapi from 'face-api.js'
 
+// Use /models locally, /repo-name/models on GitHub Pages
 const basePath = import.meta.env.MODE === 'production'
   ? '/new-ai-emotion-detector/models'
   : '/models'
