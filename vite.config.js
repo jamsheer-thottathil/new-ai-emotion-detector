@@ -1,8 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Replace 'new-ai-emotion-detector' with your repo name
-export default defineConfig({
-  base: '/new-ai-emotion-detector/',
-  plugins: [react()],
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => {
+  return {
+    base: mode === 'production'
+      ? '/new-ai-emotion-detector/'  // GitHub Pages repo name
+      : '/',                          // local dev
+    plugins: [react()],
+  }
 })
